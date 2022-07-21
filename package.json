@@ -1,20 +1,28 @@
 {
-  "name": "your-project-name",
+  "name": "doctolib-monkeypox-vaccin-watcher",
   "version": "1.0.0",
   "description": "Your project description",
   "main": "dist/index.js",
-  "repository": "https://github.com/DeathVenom54/typescript-minimal-starter.git",
-  "author": "DeathVenom54 <fdragon602@gmail.com>",
+  "repository": "https://github.com/eole1712/doctolib-monkeypox-vaccin-watcher",
+  "author": "Grisha Ghukasyan",
   "license": "MIT",
   "private": true,
   "devDependencies": {
     "@types/node": "^17.0.21",
+    "@types/node-notifier": "^8.0.2",
+    "forever": "^4.0.3",
     "prettier": "^2.5.1",
     "typescript": "^4.6.2"
   },
   "scripts": {
+    "postinstall": "cp ./Doctolib.icns ./node_modules/notification-for-mac/app/terminal-notifier.app/Contents/Resources/Terminal.icns",
+    "prestart": "yarn build",
     "start": "node dist/index.js",
     "build": "tsc",
     "dev": "tsc -W"
+  },
+  "dependencies": {
+    "axios": "^0.27.2",
+    "notification-for-mac": "^2.0.3"
   }
 }
